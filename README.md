@@ -67,22 +67,6 @@ pid_1234_events = analyzer.filter_by_pid(1234)
 read_operations = analyzer.filter_by_syscall("read", args=["filename.txt"])
 ```
 
-### Interactive Visualization *(Partial - In Progress)*
-
-```python
-from stracetools import StraceVisualizer
-
-# Create interactive timeline
-visualizer = StraceVisualizer(analyzer)
-timeline_fig = visualizer.plot_timeline_gantt()
-timeline_fig.show()
-
-# Process activity overview
-activity_fig = visualizer.plot_process_activity()
-activity_fig.show()
-```
-
-
 ## Key Features 🛠️
 
 ### 🔍 **Powerful Filtering & Analysis**
@@ -137,19 +121,20 @@ timeline = analyzer.get_timeline_summary(bucket_size=timedelta(seconds=1))
 ### 📈 **Interactive Visualizations** *(Partial - In Progress)*
 
 ```python
-visualizer = StraceVisualizer(analyzer)
+visualizer = StraceVisualizer(analyzer, color_map_file="default_colors.json", auto_fillup=False)
 
 # Interactive Gantt chart timeline
 gantt_fig = visualizer.plot_timeline_gantt(
     pids=[1234, 5678],           # Filter specific processes
     syscalls=["read", "write"],   # Filter specific syscalls
-    max_events=1000,             # Limit for performance
+    max_events=40000,             # Limit for performance
 )
 
 # Process activity timeline  
 activity_fig = visualizer.plot_process_activity()
 ```
 
+<img alt="Gantt Chart Example" height="500" src="./docs/filtered_events.svg"/>
 
 ## Roadmap 🗺️
 
