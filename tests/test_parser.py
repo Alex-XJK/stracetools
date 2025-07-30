@@ -42,3 +42,10 @@ def test_parser():
     print(f"Time elapsed (last - first): {time_since.total_seconds():.6f} seconds")
 
     assert time_since.microseconds == 1797864 - 941300
+
+def test_file_parsing():
+    parser = StraceParser()
+
+    events = parser.parse_file("../examples/ls.strace.out")
+
+    assert len(events) == 722

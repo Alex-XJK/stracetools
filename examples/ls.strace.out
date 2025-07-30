@@ -1,0 +1,722 @@
+993599 16:27:25.065717 execve("/usr/bin/ls", ["ls", "-al", "/"], 0x7fff6da16cc0 /* 41 vars */) = 0 <0.000303>
+993599 16:27:25.066246 brk(NULL)        = 0x637f50b61000 <0.000055>
+993599 16:27:25.066433 arch_prctl(0x3001 /* ARCH_??? */, 0x7ffe502a45d0) = -1 EINVAL (Invalid argument) <0.000040>
+993599 16:27:25.066593 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x774371f18000 <0.000056>
+993599 16:27:25.066729 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.066872 openat(AT_FDCWD, "/opt/amazon/efa/lib/glibc-hwcaps/x86-64-v4/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000018>
+993599 16:27:25.066943 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/glibc-hwcaps/x86-64-v4", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.067005 openat(AT_FDCWD, "/opt/amazon/efa/lib/glibc-hwcaps/x86-64-v3/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.067055 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/glibc-hwcaps/x86-64-v3", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000025>
+993599 16:27:25.067119 openat(AT_FDCWD, "/opt/amazon/efa/lib/glibc-hwcaps/x86-64-v2/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.067168 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/glibc-hwcaps/x86-64-v2", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.067219 openat(AT_FDCWD, "/opt/amazon/efa/lib/tls/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.067270 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/tls/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.067316 openat(AT_FDCWD, "/opt/amazon/efa/lib/tls/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.067364 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/tls/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.067409 openat(AT_FDCWD, "/opt/amazon/efa/lib/tls/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.067460 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/tls/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000136>
+993599 16:27:25.067640 openat(AT_FDCWD, "/opt/amazon/efa/lib/tls/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.067694 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/tls/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.067741 openat(AT_FDCWD, "/opt/amazon/efa/lib/tls/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.067789 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/tls/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.067832 openat(AT_FDCWD, "/opt/amazon/efa/lib/tls/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.067893 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/tls/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000007>
+993599 16:27:25.067927 openat(AT_FDCWD, "/opt/amazon/efa/lib/tls/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.067972 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/tls/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.068017 openat(AT_FDCWD, "/opt/amazon/efa/lib/tls/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.068063 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/tls", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.068110 openat(AT_FDCWD, "/opt/amazon/efa/lib/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.068168 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.068215 openat(AT_FDCWD, "/opt/amazon/efa/lib/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.068264 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.068309 openat(AT_FDCWD, "/opt/amazon/efa/lib/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.068359 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.068403 openat(AT_FDCWD, "/opt/amazon/efa/lib/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.068451 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.068497 openat(AT_FDCWD, "/opt/amazon/efa/lib/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.068543 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.068588 openat(AT_FDCWD, "/opt/amazon/efa/lib/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.068635 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.068681 openat(AT_FDCWD, "/opt/amazon/efa/lib/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.068729 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.068775 openat(AT_FDCWD, "/opt/amazon/efa/lib/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.068825 newfstatat(AT_FDCWD, "/opt/amazon/efa/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000027>
+993599 16:27:25.068910 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/glibc-hwcaps/x86-64-v4/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.068960 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/glibc-hwcaps/x86-64-v4", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.069003 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/glibc-hwcaps/x86-64-v3/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000181>
+993599 16:27:25.069287 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/glibc-hwcaps/x86-64-v3", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000050>
+993599 16:27:25.069411 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/glibc-hwcaps/x86-64-v2/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.069518 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/glibc-hwcaps/x86-64-v2", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000047>
+993599 16:27:25.069630 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.069744 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.069870 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000047>
+993599 16:27:25.070111 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000037>
+993599 16:27:25.070232 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.070353 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000120>
+993599 16:27:25.070537 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.070654 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.070759 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.070890 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.071002 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000048>
+993599 16:27:25.071115 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000040>
+993599 16:27:25.071219 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000048>
+993599 16:27:25.071330 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.071436 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000170>
+993599 16:27:25.071688 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/tls", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.071798 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000063>
+993599 16:27:25.071930 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.072036 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000048>
+993599 16:27:25.072149 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.072267 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000088>
+993599 16:27:25.072416 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.072528 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.072634 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000040>
+993599 16:27:25.072742 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.072863 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.072982 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.073089 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000039>
+993599 16:27:25.073198 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.073317 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000050>
+993599 16:27:25.073430 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.073538 newfstatat(AT_FDCWD, "/opt/amazon/openmpi/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000046>
+993599 16:27:25.073653 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/glibc-hwcaps/x86-64-v4/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.073761 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/glibc-hwcaps/x86-64-v4", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000046>
+993599 16:27:25.074048 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/glibc-hwcaps/x86-64-v3/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000054>
+993599 16:27:25.074184 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/glibc-hwcaps/x86-64-v3", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000047>
+993599 16:27:25.074296 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/glibc-hwcaps/x86-64-v2/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.074403 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/glibc-hwcaps/x86-64-v2", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000047>
+993599 16:27:25.074514 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.074626 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000242>
+993599 16:27:25.074947 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000026>
+993599 16:27:25.075047 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.075153 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.075265 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.075370 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.075482 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000057>
+993599 16:27:25.075723 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.075838 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000048>
+993599 16:27:25.075969 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000054>
+993599 16:27:25.076088 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.076192 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000048>
+993599 16:27:25.076303 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000040>
+993599 16:27:25.076407 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000047>
+993599 16:27:25.076517 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/tls", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000040>
+993599 16:27:25.076643 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.076750 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000040>
+993599 16:27:25.076871 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000045>
+993599 16:27:25.076985 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.077097 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.077202 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000039>
+993599 16:27:25.077310 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.077416 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000040>
+993599 16:27:25.077524 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.077629 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000047>
+993599 16:27:25.077741 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.077864 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000084>
+993599 16:27:25.078020 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.078128 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000046>
+993599 16:27:25.078237 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.078342 newfstatat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000046>
+993599 16:27:25.078458 openat(AT_FDCWD, "/usr/local/cuda/lib/glibc-hwcaps/x86-64-v4/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000178>
+993599 16:27:25.078713 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/glibc-hwcaps/x86-64-v4", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000053>
+993599 16:27:25.078836 openat(AT_FDCWD, "/usr/local/cuda/lib/glibc-hwcaps/x86-64-v3/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.078967 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/glibc-hwcaps/x86-64-v3", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.079073 openat(AT_FDCWD, "/usr/local/cuda/lib/glibc-hwcaps/x86-64-v2/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.079184 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/glibc-hwcaps/x86-64-v2", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.079288 openat(AT_FDCWD, "/usr/local/cuda/lib/tls/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.079399 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/tls/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000040>
+993599 16:27:25.079625 openat(AT_FDCWD, "/usr/local/cuda/lib/tls/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000047>
+993599 16:27:25.080028 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/tls/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000151>
+993599 16:27:25.080305 openat(AT_FDCWD, "/usr/local/cuda/lib/tls/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000050>
+993599 16:27:25.080424 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/tls/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.080530 openat(AT_FDCWD, "/usr/local/cuda/lib/tls/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000048>
+993599 16:27:25.080643 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/tls/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000039>
+993599 16:27:25.080746 openat(AT_FDCWD, "/usr/local/cuda/lib/tls/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000048>
+993599 16:27:25.080879 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/tls/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.080995 openat(AT_FDCWD, "/usr/local/cuda/lib/tls/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000047>
+993599 16:27:25.081106 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/tls/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000040>
+993599 16:27:25.081215 openat(AT_FDCWD, "/usr/local/cuda/lib/tls/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.081320 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/tls/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000040>
+993599 16:27:25.081428 openat(AT_FDCWD, "/usr/local/cuda/lib/tls/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.081533 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/tls", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000040>
+993599 16:27:25.081642 openat(AT_FDCWD, "/usr/local/cuda/lib/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.081748 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000040>
+993599 16:27:25.081866 openat(AT_FDCWD, "/usr/local/cuda/lib/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000046>
+993599 16:27:25.081981 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000045>
+993599 16:27:25.082091 openat(AT_FDCWD, "/usr/local/cuda/lib/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.082198 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000046>
+993599 16:27:25.082307 openat(AT_FDCWD, "/usr/local/cuda/lib/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.082413 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000049>
+993599 16:27:25.082525 openat(AT_FDCWD, "/usr/local/cuda/lib/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.082630 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000046>
+993599 16:27:25.082741 openat(AT_FDCWD, "/usr/local/cuda/lib/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.082859 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000050>
+993599 16:27:25.082980 openat(AT_FDCWD, "/usr/local/cuda/lib/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.083091 newfstatat(AT_FDCWD, "/usr/local/cuda/lib/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.083207 openat(AT_FDCWD, "/usr/local/cuda/lib/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.083319 newfstatat(AT_FDCWD, "/usr/local/cuda/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000041>
+993599 16:27:25.083428 openat(AT_FDCWD, "/usr/local/cuda/glibc-hwcaps/x86-64-v4/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000105>
+993599 16:27:25.083653 newfstatat(AT_FDCWD, "/usr/local/cuda/glibc-hwcaps/x86-64-v4", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.083765 openat(AT_FDCWD, "/usr/local/cuda/glibc-hwcaps/x86-64-v3/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.083891 newfstatat(AT_FDCWD, "/usr/local/cuda/glibc-hwcaps/x86-64-v3", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.084002 openat(AT_FDCWD, "/usr/local/cuda/glibc-hwcaps/x86-64-v2/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.084114 newfstatat(AT_FDCWD, "/usr/local/cuda/glibc-hwcaps/x86-64-v2", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000056>
+993599 16:27:25.085119 openat(AT_FDCWD, "/usr/local/cuda/tls/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000222>
+993599 16:27:25.085413 newfstatat(AT_FDCWD, "/usr/local/cuda/tls/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000030>
+993599 16:27:25.085488 openat(AT_FDCWD, "/usr/local/cuda/tls/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000024>
+993599 16:27:25.085547 newfstatat(AT_FDCWD, "/usr/local/cuda/tls/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000022>
+993599 16:27:25.085604 openat(AT_FDCWD, "/usr/local/cuda/tls/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000022>
+993599 16:27:25.085660 newfstatat(AT_FDCWD, "/usr/local/cuda/tls/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000036>
+993599 16:27:25.086201 openat(AT_FDCWD, "/usr/local/cuda/tls/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000050>
+993599 16:27:25.086310 newfstatat(AT_FDCWD, "/usr/local/cuda/tls/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.086428 openat(AT_FDCWD, "/usr/local/cuda/tls/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.086538 newfstatat(AT_FDCWD, "/usr/local/cuda/tls/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000048>
+993599 16:27:25.086652 openat(AT_FDCWD, "/usr/local/cuda/tls/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.086759 newfstatat(AT_FDCWD, "/usr/local/cuda/tls/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000046>
+993599 16:27:25.086883 openat(AT_FDCWD, "/usr/local/cuda/tls/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.087001 newfstatat(AT_FDCWD, "/usr/local/cuda/tls/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.087106 openat(AT_FDCWD, "/usr/local/cuda/tls/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.087219 newfstatat(AT_FDCWD, "/usr/local/cuda/tls", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000050>
+993599 16:27:25.087312 openat(AT_FDCWD, "/usr/local/cuda/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000028>
+993599 16:27:25.087412 newfstatat(AT_FDCWD, "/usr/local/cuda/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.087652 openat(AT_FDCWD, "/usr/local/cuda/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000045>
+993599 16:27:25.087771 newfstatat(AT_FDCWD, "/usr/local/cuda/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.087879 openat(AT_FDCWD, "/usr/local/cuda/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000017>
+993599 16:27:25.087948 newfstatat(AT_FDCWD, "/usr/local/cuda/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.087997 openat(AT_FDCWD, "/usr/local/cuda/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.088047 newfstatat(AT_FDCWD, "/usr/local/cuda/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.088093 openat(AT_FDCWD, "/usr/local/cuda/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.088142 newfstatat(AT_FDCWD, "/usr/local/cuda/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.088188 openat(AT_FDCWD, "/usr/local/cuda/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.088254 newfstatat(AT_FDCWD, "/usr/local/cuda/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.088295 openat(AT_FDCWD, "/usr/local/cuda/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.088334 newfstatat(AT_FDCWD, "/usr/local/cuda/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.088370 openat(AT_FDCWD, "/usr/local/cuda/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.088411 newfstatat(AT_FDCWD, "/usr/local/cuda", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000008>
+993599 16:27:25.088448 openat(AT_FDCWD, "/usr/local/cuda/lib64/glibc-hwcaps/x86-64-v4/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.088484 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/glibc-hwcaps/x86-64-v4", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000007>
+993599 16:27:25.088514 openat(AT_FDCWD, "/usr/local/cuda/lib64/glibc-hwcaps/x86-64-v3/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.088550 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/glibc-hwcaps/x86-64-v3", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.088585 openat(AT_FDCWD, "/usr/local/cuda/lib64/glibc-hwcaps/x86-64-v2/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.088619 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/glibc-hwcaps/x86-64-v2", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.088650 openat(AT_FDCWD, "/usr/local/cuda/lib64/tls/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.088684 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/tls/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.088716 openat(AT_FDCWD, "/usr/local/cuda/lib64/tls/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.088750 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/tls/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.088781 openat(AT_FDCWD, "/usr/local/cuda/lib64/tls/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.088814 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/tls/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000025>
+993599 16:27:25.088883 openat(AT_FDCWD, "/usr/local/cuda/lib64/tls/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.088922 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/tls/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000007>
+993599 16:27:25.088952 openat(AT_FDCWD, "/usr/local/cuda/lib64/tls/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.088986 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/tls/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.089020 openat(AT_FDCWD, "/usr/local/cuda/lib64/tls/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.089058 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/tls/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.089092 openat(AT_FDCWD, "/usr/local/cuda/lib64/tls/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.089128 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/tls/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.089161 openat(AT_FDCWD, "/usr/local/cuda/lib64/tls/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.089199 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/tls", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.089233 openat(AT_FDCWD, "/usr/local/cuda/lib64/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.089286 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.089332 openat(AT_FDCWD, "/usr/local/cuda/lib64/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.089383 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.089431 openat(AT_FDCWD, "/usr/local/cuda/lib64/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.089477 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.089530 openat(AT_FDCWD, "/usr/local/cuda/lib64/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.089581 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.089628 openat(AT_FDCWD, "/usr/local/cuda/lib64/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.089677 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.089722 openat(AT_FDCWD, "/usr/local/cuda/lib64/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.089771 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.089816 openat(AT_FDCWD, "/usr/local/cuda/lib64/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000024>
+993599 16:27:25.089880 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.089927 openat(AT_FDCWD, "/usr/local/cuda/lib64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000015>
+993599 16:27:25.089977 newfstatat(AT_FDCWD, "/usr/local/cuda/lib64", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000011>
+993599 16:27:25.090038 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/glibc-hwcaps/x86-64-v4/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000016>
+993599 16:27:25.090090 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/glibc-hwcaps/x86-64-v4", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.090136 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/glibc-hwcaps/x86-64-v3/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.090185 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/glibc-hwcaps/x86-64-v3", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.090231 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/glibc-hwcaps/x86-64-v2/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.090280 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/glibc-hwcaps/x86-64-v2", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.090332 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.090384 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.090433 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.090486 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.090534 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.090585 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.090633 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.090685 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.090733 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.090785 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.090830 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.090891 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.090936 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.090987 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.091030 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.091081 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/tls", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.091117 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.091163 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.091196 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.091230 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.091263 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.091301 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.091336 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.091390 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.091434 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.091596 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.091652 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.091710 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.091757 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.091809 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.091866 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.091906 newfstatat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000008>
+993599 16:27:25.091943 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/glibc-hwcaps/x86-64-v4/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.091979 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/glibc-hwcaps/x86-64-v4", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000007>
+993599 16:27:25.092009 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/glibc-hwcaps/x86-64-v3/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.092057 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/glibc-hwcaps/x86-64-v3", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000119>
+993599 16:27:25.092213 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/glibc-hwcaps/x86-64-v2/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.092286 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/glibc-hwcaps/x86-64-v2", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.092338 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000015>
+993599 16:27:25.092390 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.092451 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.092498 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.092547 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.092586 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.092619 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.092652 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.092684 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.092716 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.092747 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.092780 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.092814 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.092862 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.092902 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.092935 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/tls", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.092967 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.093000 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.093035 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.093072 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.093126 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.093164 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.093198 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.093231 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.093264 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.093308 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.093344 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.093380 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.093438 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.093478 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.093511 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.093544 newfstatat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000009>
+993599 16:27:25.093582 openat(AT_FDCWD, "/usr/local/lib/glibc-hwcaps/x86-64-v4/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.093616 newfstatat(AT_FDCWD, "/usr/local/lib/glibc-hwcaps/x86-64-v4", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.093648 openat(AT_FDCWD, "/usr/local/lib/glibc-hwcaps/x86-64-v3/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.093679 newfstatat(AT_FDCWD, "/usr/local/lib/glibc-hwcaps/x86-64-v3", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.093711 openat(AT_FDCWD, "/usr/local/lib/glibc-hwcaps/x86-64-v2/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.093744 newfstatat(AT_FDCWD, "/usr/local/lib/glibc-hwcaps/x86-64-v2", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.093778 openat(AT_FDCWD, "/usr/local/lib/tls/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.093811 newfstatat(AT_FDCWD, "/usr/local/lib/tls/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.093860 openat(AT_FDCWD, "/usr/local/lib/tls/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.093901 newfstatat(AT_FDCWD, "/usr/local/lib/tls/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.093935 openat(AT_FDCWD, "/usr/local/lib/tls/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.093969 newfstatat(AT_FDCWD, "/usr/local/lib/tls/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.094003 openat(AT_FDCWD, "/usr/local/lib/tls/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.094038 newfstatat(AT_FDCWD, "/usr/local/lib/tls/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.094080 openat(AT_FDCWD, "/usr/local/lib/tls/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.094117 newfstatat(AT_FDCWD, "/usr/local/lib/tls/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.094201 openat(AT_FDCWD, "/usr/local/lib/tls/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.094243 newfstatat(AT_FDCWD, "/usr/local/lib/tls/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000007>
+993599 16:27:25.094284 openat(AT_FDCWD, "/usr/local/lib/tls/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.094325 newfstatat(AT_FDCWD, "/usr/local/lib/tls/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000008>
+993599 16:27:25.094380 openat(AT_FDCWD, "/usr/local/lib/tls/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.094430 newfstatat(AT_FDCWD, "/usr/local/lib/tls", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.094475 openat(AT_FDCWD, "/usr/local/lib/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.094519 newfstatat(AT_FDCWD, "/usr/local/lib/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.094558 openat(AT_FDCWD, "/usr/local/lib/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.094614 newfstatat(AT_FDCWD, "/usr/local/lib/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.094660 openat(AT_FDCWD, "/usr/local/lib/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.094710 newfstatat(AT_FDCWD, "/usr/local/lib/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.094754 openat(AT_FDCWD, "/usr/local/lib/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.094803 newfstatat(AT_FDCWD, "/usr/local/lib/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.094858 openat(AT_FDCWD, "/usr/local/lib/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.094915 newfstatat(AT_FDCWD, "/usr/local/lib/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.094961 openat(AT_FDCWD, "/usr/local/lib/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.095009 newfstatat(AT_FDCWD, "/usr/local/lib/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.095054 openat(AT_FDCWD, "/usr/local/lib/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.095094 newfstatat(AT_FDCWD, "/usr/local/lib/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000007>
+993599 16:27:25.095126 openat(AT_FDCWD, "/usr/local/lib/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000010>
+993599 16:27:25.095161 newfstatat(AT_FDCWD, "/usr/local/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000008>
+993599 16:27:25.095201 openat(AT_FDCWD, "/usr/lib/glibc-hwcaps/x86-64-v4/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.095242 newfstatat(AT_FDCWD, "/usr/lib/glibc-hwcaps/x86-64-v4", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.095295 openat(AT_FDCWD, "/usr/lib/glibc-hwcaps/x86-64-v3/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.095344 newfstatat(AT_FDCWD, "/usr/lib/glibc-hwcaps/x86-64-v3", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.095388 openat(AT_FDCWD, "/usr/lib/glibc-hwcaps/x86-64-v2/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.095437 newfstatat(AT_FDCWD, "/usr/lib/glibc-hwcaps/x86-64-v2", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.095481 openat(AT_FDCWD, "/usr/lib/tls/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.095534 newfstatat(AT_FDCWD, "/usr/lib/tls/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.095577 openat(AT_FDCWD, "/usr/lib/tls/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.095628 newfstatat(AT_FDCWD, "/usr/lib/tls/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000009>
+993599 16:27:25.095672 openat(AT_FDCWD, "/usr/lib/tls/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.095718 newfstatat(AT_FDCWD, "/usr/lib/tls/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.095765 openat(AT_FDCWD, "/usr/lib/tls/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.095811 newfstatat(AT_FDCWD, "/usr/lib/tls/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.095870 openat(AT_FDCWD, "/usr/lib/tls/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.095923 newfstatat(AT_FDCWD, "/usr/lib/tls/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.095969 openat(AT_FDCWD, "/usr/lib/tls/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.096016 newfstatat(AT_FDCWD, "/usr/lib/tls/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.096063 openat(AT_FDCWD, "/usr/lib/tls/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.096109 newfstatat(AT_FDCWD, "/usr/lib/tls/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.096155 openat(AT_FDCWD, "/usr/lib/tls/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.096202 newfstatat(AT_FDCWD, "/usr/lib/tls", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.096249 openat(AT_FDCWD, "/usr/lib/haswell/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.096296 newfstatat(AT_FDCWD, "/usr/lib/haswell/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.096343 openat(AT_FDCWD, "/usr/lib/haswell/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.096388 newfstatat(AT_FDCWD, "/usr/lib/haswell/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.096435 openat(AT_FDCWD, "/usr/lib/haswell/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.096481 newfstatat(AT_FDCWD, "/usr/lib/haswell/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.096529 openat(AT_FDCWD, "/usr/lib/haswell/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.096576 newfstatat(AT_FDCWD, "/usr/lib/haswell", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.096623 openat(AT_FDCWD, "/usr/lib/avx512_1/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000013>
+993599 16:27:25.096670 newfstatat(AT_FDCWD, "/usr/lib/avx512_1/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.096719 openat(AT_FDCWD, "/usr/lib/avx512_1/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.096767 newfstatat(AT_FDCWD, "/usr/lib/avx512_1", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000011>
+993599 16:27:25.096814 openat(AT_FDCWD, "/usr/lib/x86_64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000053>
+993599 16:27:25.096919 newfstatat(AT_FDCWD, "/usr/lib/x86_64", 0x7ffe502a37f0, 0) = -1 ENOENT (No such file or directory) <0.000012>
+993599 16:27:25.096970 openat(AT_FDCWD, "/usr/lib/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000014>
+993599 16:27:25.097018 newfstatat(AT_FDCWD, "/usr/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000012>
+993599 16:27:25.097075 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3 <0.000016>
+993599 16:27:25.097127 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=52396, ...}, AT_EMPTY_PATH) = 0 <0.000011>
+993599 16:27:25.097178 mmap(NULL, 52396, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371f0b000 <0.000038>
+993599 16:27:25.097301 close(3)         = 0 <0.000040>
+993599 16:27:25.097415 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libselinux.so.1", O_RDONLY|O_CLOEXEC) = 3 <0.000054>
+993599 16:27:25.097536 read(3, "\x7f\x45\x4c\x46\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00"..., 832) = 832 <0.000041>
+993599 16:27:25.097649 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=166280, ...}, AT_EMPTY_PATH) = 0 <0.000041>
+993599 16:27:25.097765 mmap(NULL, 177672, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x774371edf000 <0.000049>
+993599 16:27:25.097885 mprotect(0x774371ee5000, 139264, PROT_NONE) = 0 <0.000040>
+993599 16:27:25.098008 mmap(0x774371ee5000, 106496, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6000) = 0x774371ee5000 <0.000053>
+993599 16:27:25.098129 mmap(0x774371eff000, 28672, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x20000) = 0x774371eff000 <0.000049>
+993599 16:27:25.098592 mmap(0x774371f07000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x27000) = 0x774371f07000 <0.001699>
+993599 16:27:25.100428 mmap(0x774371f09000, 5640, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x774371f09000 <0.000054>
+993599 16:27:25.100574 close(3)         = 0 <0.000043>
+993599 16:27:25.100713 openat(AT_FDCWD, "/opt/amazon/efa/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.001059>
+993599 16:27:25.101929 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000060>
+993599 16:27:25.102255 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.001515>
+993599 16:27:25.103913 openat(AT_FDCWD, "/usr/local/cuda/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000065>
+993599 16:27:25.104065 openat(AT_FDCWD, "/usr/local/cuda/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000128>
+993599 16:27:25.105381 openat(AT_FDCWD, "/usr/local/cuda/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000513>
+993599 16:27:25.106023 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000052>
+993599 16:27:25.106157 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000056>
+993599 16:27:25.106287 openat(AT_FDCWD, "/usr/local/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000019>
+993599 16:27:25.106360 openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000017>
+993599 16:27:25.106424 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000029>
+993599 16:27:25.106486 read(3, "\x7f\x45\x4c\x46\x02\x01\x01\x03\x00\x00\x00\x00\x00\x00\x00\x00"..., 832) = 832 <0.000020>
+993599 16:27:25.106541 pread64(3, "\x06\x00\x00\x00\x04\x00\x00\x00\x40\x00\x00\x00\x00\x00\x00\x00"..., 784, 64) = 784 <0.000014>
+993599 16:27:25.106587 pread64(3, "\x04\x00\x00\x00\x20\x00\x00\x00\x05\x00\x00\x00\x47\x4e\x55\x00"..., 48, 848) = 48 <0.000013>
+993599 16:27:25.106639 pread64(3, "\x04\x00\x00\x00\x14\x00\x00\x00\x03\x00\x00\x00\x47\x4e\x55\x00"..., 68, 896) = 68 <0.000013>
+993599 16:27:25.106694 newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0 <0.000023>
+993599 16:27:25.106783 pread64(3, "\x06\x00\x00\x00\x04\x00\x00\x00\x40\x00\x00\x00\x00\x00\x00\x00"..., 784, 64) = 784 <0.000020>
+993599 16:27:25.106841 mmap(NULL, 2264656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x774371c00000 <0.000037>
+993599 16:27:25.106931 mprotect(0x774371c28000, 2023424, PROT_NONE) = 0 <0.000033>
+993599 16:27:25.106994 mmap(0x774371c28000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x774371c28000 <0.000035>
+993599 16:27:25.107059 mmap(0x774371dbd000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x774371dbd000 <0.000034>
+993599 16:27:25.107129 mmap(0x774371e16000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x215000) = 0x774371e16000 <0.000740>
+993599 16:27:25.107928 mmap(0x774371e1c000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x774371e1c000 <0.000069>
+993599 16:27:25.108058 close(3)         = 0 <0.000011>
+993599 16:27:25.108127 openat(AT_FDCWD, "/opt/amazon/efa/lib/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000030>
+993599 16:27:25.108224 openat(AT_FDCWD, "/opt/amazon/openmpi/lib/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000024>
+993599 16:27:25.108286 openat(AT_FDCWD, "/opt/amazon/ofi-nccl/lib/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000023>
+993599 16:27:25.108352 openat(AT_FDCWD, "/usr/local/cuda/lib/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.108433 openat(AT_FDCWD, "/usr/local/cuda/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000023>
+993599 16:27:25.108499 openat(AT_FDCWD, "/usr/local/cuda/lib64/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000125>
+993599 16:27:25.108684 openat(AT_FDCWD, "/usr/local/cuda/extras/CUPTI/lib64/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000032>
+993599 16:27:25.108764 openat(AT_FDCWD, "/usr/local/cuda/targets/x86_64-linux/lib/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000021>
+993599 16:27:25.108822 openat(AT_FDCWD, "/usr/local/lib/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.001057>
+993599 16:27:25.109947 openat(AT_FDCWD, "/usr/lib/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000025>
+993599 16:27:25.110107 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = 3 <0.000150>
+993599 16:27:25.110335 read(3, "\x7f\x45\x4c\x46\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00"..., 832) = 832 <0.000030>
+993599 16:27:25.110983 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=613064, ...}, AT_EMPTY_PATH) = 0 <0.000023>
+993599 16:27:25.111070 mmap(NULL, 615184, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x774371e48000 <0.000108>
+993599 16:27:25.111216 mmap(0x774371e4a000, 438272, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x774371e4a000 <0.000038>
+993599 16:27:25.111287 mmap(0x774371eb5000, 163840, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6d000) = 0x774371eb5000 <0.000028>
+993599 16:27:25.111348 mmap(0x774371edd000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x94000) = 0x774371edd000 <0.000028>
+993599 16:27:25.111432 close(3)         = 0 <0.000030>
+993599 16:27:25.111935 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x774371e46000 <0.000040>
+993599 16:27:25.112061 arch_prctl(ARCH_SET_FS, 0x774371e47180) = 0 <0.000008>
+993599 16:27:25.112127 set_tid_address(0x774371e47450) = 993599 <0.000008>
+993599 16:27:25.112160 set_robust_list(0x774371e47460, 24) = 0 <0.000030>
+993599 16:27:25.112214 rseq(0x774371e47b20, 0x20, 0, 0x53053053) = 0 <0.000029>
+993599 16:27:25.112370 mprotect(0x774371e16000, 16384, PROT_READ) = 0 <0.000045>
+993599 16:27:25.112486 mprotect(0x774371edd000, 4096, PROT_READ) = 0 <0.000049>
+993599 16:27:25.112664 mprotect(0x774371f07000, 4096, PROT_READ) = 0 <0.000055>
+993599 16:27:25.112822 mprotect(0x637f12e8d000, 8192, PROT_READ) = 0 <0.000046>
+993599 16:27:25.112926 mprotect(0x774371f52000, 8192, PROT_READ) = 0 <0.000031>
+993599 16:27:25.113017 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0 <0.000010>
+993599 16:27:25.113103 munmap(0x774371f0b000, 52396) = 0 <0.000071>
+993599 16:27:25.113264 statfs("/sys/fs/selinux", 0x7ffe502a4610) = -1 ENOENT (No such file or directory) <0.000049>
+993599 16:27:25.113393 statfs("/selinux", 0x7ffe502a4610) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.113508 getrandom("\x40\x31\x72\x83\xaf\x01\xe3\xea", 8, GRND_NONBLOCK) = 8 <0.000040>
+993599 16:27:25.113618 brk(NULL)        = 0x637f50b61000 <0.000038>
+993599 16:27:25.113713 brk(0x637f50b82000) = 0x637f50b82000 <0.000042>
+993599 16:27:25.113838 openat(AT_FDCWD, "/proc/filesystems", O_RDONLY|O_CLOEXEC) = 3 <0.000056>
+993599 16:27:25.113993 newfstatat(3, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0 <0.000040>
+993599 16:27:25.114109 read(3, "nodev\tsysfs\nnode"..., 1024) = 407 <0.000053>
+993599 16:27:25.114233 read(3, "", 1024) = 0 <0.000039>
+993599 16:27:25.114336 close(3)         = 0 <0.000042>
+993599 16:27:25.114440 access("/etc/selinux/config", F_OK) = -1 ENOENT (No such file or directory) <0.000046>
+993599 16:27:25.114584 openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3 <0.000178>
+993599 16:27:25.114868 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3048928, ...}, AT_EMPTY_PATH) = 0 <0.000053>
+993599 16:27:25.115003 mmap(NULL, 3048928, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371800000 <0.000050>
+993599 16:27:25.115122 close(3)         = 0 <0.000044>
+993599 16:27:25.115227 openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3 <0.000047>
+993599 16:27:25.115345 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2996, ...}, AT_EMPTY_PATH) = 0 <0.000041>
+993599 16:27:25.115460 read(3, "# Locale name al"..., 4096) = 2996 <0.000131>
+993599 16:27:25.115683 read(3, "", 4096) = 0 <0.000042>
+993599 16:27:25.115786 close(3)         = 0 <0.000040>
+993599 16:27:25.115931 openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_IDENTIFICATION", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000048>
+993599 16:27:25.116053 openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_IDENTIFICATION", O_RDONLY|O_CLOEXEC) = 3 <0.000046>
+993599 16:27:25.116172 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=258, ...}, AT_EMPTY_PATH) = 0 <0.000041>
+993599 16:27:25.116281 mmap(NULL, 258, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371f51000 <0.000047>
+993599 16:27:25.116394 close(3)         = 0 <0.000038>
+993599 16:27:25.116497 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache", O_RDONLY) = 3 <0.000051>
+993599 16:27:25.116612 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=27002, ...}, AT_EMPTY_PATH) = 0 <0.000040>
+993599 16:27:25.116718 mmap(NULL, 27002, PROT_READ, MAP_SHARED, 3, 0) = 0x774371f11000 <0.000052>
+993599 16:27:25.116830 close(3)         = 0 <0.000055>
+993599 16:27:25.116950 futex(0x774371e1ba6c, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000045>
+993599 16:27:25.117064 openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_MEASUREMENT", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.117174 openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_MEASUREMENT", O_RDONLY|O_CLOEXEC) = 3 <0.000051>
+993599 16:27:25.117288 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=23, ...}, AT_EMPTY_PATH) = 0 <0.000040>
+993599 16:27:25.117394 mmap(NULL, 23, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371f10000 <0.000052>
+993599 16:27:25.117504 close(3)         = 0 <0.000039>
+993599 16:27:25.117616 openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_TELEPHONE", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.117725 openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_TELEPHONE", O_RDONLY|O_CLOEXEC) = 3 <0.000043>
+993599 16:27:25.117835 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=47, ...}, AT_EMPTY_PATH) = 0 <0.000038>
+993599 16:27:25.117975 mmap(NULL, 47, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371f0f000 <0.000046>
+993599 16:27:25.118087 close(3)         = 0 <0.000038>
+993599 16:27:25.118192 openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_ADDRESS", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.118321 openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_ADDRESS", O_RDONLY|O_CLOEXEC) = 3 <0.000282>
+993599 16:27:25.118675 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=127, ...}, AT_EMPTY_PATH) = 0 <0.000021>
+993599 16:27:25.118768 mmap(NULL, 127, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371f0e000 <0.000048>
+993599 16:27:25.118880 close(3)         = 0 <0.000011>
+993599 16:27:25.118946 openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_NAME", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000051>
+993599 16:27:25.119068 openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_NAME", O_RDONLY|O_CLOEXEC) = 3 <0.000051>
+993599 16:27:25.119183 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=62, ...}, AT_EMPTY_PATH) = 0 <0.000040>
+993599 16:27:25.119292 mmap(NULL, 62, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371f0d000 <0.000053>
+993599 16:27:25.119404 close(3)         = 0 <0.000038>
+993599 16:27:25.119621 openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_PAPER", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000060>
+993599 16:27:25.119752 openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_PAPER", O_RDONLY|O_CLOEXEC) = 3 <0.000044>
+993599 16:27:25.119875 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=34, ...}, AT_EMPTY_PATH) = 0 <0.000048>
+993599 16:27:25.119997 mmap(NULL, 34, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371f0c000 <0.000047>
+993599 16:27:25.120107 close(3)         = 0 <0.000038>
+993599 16:27:25.120215 openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_MESSAGES", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.120331 openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_MESSAGES", O_RDONLY|O_CLOEXEC) = 3 <0.000045>
+993599 16:27:25.120438 newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0 <0.000039>
+993599 16:27:25.120549 close(3)         = 0 <0.000040>
+993599 16:27:25.120646 openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES", O_RDONLY|O_CLOEXEC) = 3 <0.000045>
+993599 16:27:25.120761 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=48, ...}, AT_EMPTY_PATH) = 0 <0.000039>
+993599 16:27:25.120885 mmap(NULL, 48, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371f0b000 <0.000046>
+993599 16:27:25.121000 close(3)         = 0 <0.000038>
+993599 16:27:25.121105 openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_MONETARY", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000049>
+993599 16:27:25.121221 openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_MONETARY", O_RDONLY|O_CLOEXEC) = 3 <0.000044>
+993599 16:27:25.121329 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=270, ...}, AT_EMPTY_PATH) = 0 <0.000044>
+993599 16:27:25.121439 mmap(NULL, 270, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371e45000 <0.000052>
+993599 16:27:25.121637 close(3)         = 0 <0.000048>
+993599 16:27:25.121761 openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_COLLATE", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000045>
+993599 16:27:25.121895 openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_COLLATE", O_RDONLY|O_CLOEXEC) = 3 <0.000061>
+993599 16:27:25.122025 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1406, ...}, AT_EMPTY_PATH) = 0 <0.000041>
+993599 16:27:25.122135 mmap(NULL, 1406, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371e44000 <0.000054>
+993599 16:27:25.122248 close(3)         = 0 <0.000038>
+993599 16:27:25.122356 openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_TIME", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.122467 openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_TIME", O_RDONLY|O_CLOEXEC) = 3 <0.000050>
+993599 16:27:25.122585 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3360, ...}, AT_EMPTY_PATH) = 0 <0.000040>
+993599 16:27:25.122690 mmap(NULL, 3360, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371e43000 <0.000046>
+993599 16:27:25.122814 close(3)         = 0 <0.000058>
+993599 16:27:25.122944 openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_NUMERIC", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000045>
+993599 16:27:25.123062 openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_NUMERIC", O_RDONLY|O_CLOEXEC) = 3 <0.000045>
+993599 16:27:25.123169 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=50, ...}, AT_EMPTY_PATH) = 0 <0.000039>
+993599 16:27:25.123281 mmap(NULL, 50, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371e42000 <0.000047>
+993599 16:27:25.123387 close(3)         = 0 <0.000044>
+993599 16:27:25.123605 openat(AT_FDCWD, "/usr/lib/locale/C.UTF-8/LC_CTYPE", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory) <0.000053>
+993599 16:27:25.123734 openat(AT_FDCWD, "/usr/lib/locale/C.utf8/LC_CTYPE", O_RDONLY|O_CLOEXEC) = 3 <0.000054>
+993599 16:27:25.123863 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=353616, ...}, AT_EMPTY_PATH) = 0 <0.000044>
+993599 16:27:25.123983 mmap(NULL, 353616, PROT_READ, MAP_PRIVATE, 3, 0) = 0x774371ba9000 <0.000055>
+993599 16:27:25.124098 close(3)         = 0 <0.000050>
+993599 16:27:25.124449 ioctl(1, TCGETS, {B9600 opost isig icanon echo ...}) = 0 <0.000039>
+993599 16:27:25.124569 ioctl(1, TIOCGWINSZ, {ws_row=24, ws_col=135, ws_xpixel=1215, ws_ypixel=408}) = 0 <0.000040>
+993599 16:27:25.124687 openat(AT_FDCWD, "/usr/share/locale/C.UTF-8/LC_TIME/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory) <0.000052>
+993599 16:27:25.124806 openat(AT_FDCWD, "/usr/share/locale/C.utf8/LC_TIME/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory) <0.000071>
+993599 16:27:25.124966 openat(AT_FDCWD, "/usr/share/locale/C/LC_TIME/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.125120 statx(AT_FDCWD, "/", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=STATX_ATTR_MOUNT_ROOT, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0 <0.000045>
+993599 16:27:25.125252 lgetxattr("/", "security.selinux", 0x637f50b6a8d0, 255) = -1 ENODATA (No data available) <0.000047>
+993599 16:27:25.125370 getxattr("/", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000041>
+993599 16:27:25.125484 getxattr("/", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000041>
+993599 16:27:25.125603 socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3 <0.000116>
+993599 16:27:25.125795 connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory) <0.000072>
+993599 16:27:25.125944 close(3)         = 0 <0.000046>
+993599 16:27:25.126056 socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3 <0.000045>
+993599 16:27:25.126161 connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory) <0.000052>
+993599 16:27:25.126491 close(3)         = 0 <0.000062>
+993599 16:27:25.126630 newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0 <0.000048>
+993599 16:27:25.126751 newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000107>
+993599 16:27:25.126916 openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3 <0.000067>
+993599 16:27:25.127137 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0 <0.000035>
+993599 16:27:25.127251 read(3, "# /etc/nsswitch."..., 4096) = 510 <0.000042>
+993599 16:27:25.127374 read(3, "", 4096) = 0 <0.000040>
+993599 16:27:25.127475 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=510, ...}, AT_EMPTY_PATH) = 0 <0.000051>
+993599 16:27:25.127703 close(3)         = 0 <0.000041>
+993599 16:27:25.127815 openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3 <0.000072>
+993599 16:27:25.127958 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2171, ...}, AT_EMPTY_PATH) = 0 <0.000042>
+993599 16:27:25.128069 lseek(3, 0, SEEK_SET) = 0 <0.000048>
+993599 16:27:25.128177 read(3, "root:x:0:0:root:"..., 4096) = 2171 <0.000433>
+993599 16:27:25.128878 close(3)         = 0 <0.000012>
+993599 16:27:25.128981 socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3 <0.000021>
+993599 16:27:25.129058 connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory) <0.000048>
+993599 16:27:25.129174 close(3)         = 0 <0.000046>
+993599 16:27:25.129251 socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3 <0.000039>
+993599 16:27:25.129318 connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.129397 close(3)         = 0 <0.000034>
+993599 16:27:25.129457 newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=510, ...}, 0) = 0 <0.000038>
+993599 16:27:25.129538 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 3 <0.000038>
+993599 16:27:25.129608 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=971, ...}, AT_EMPTY_PATH) = 0 <0.000033>
+993599 16:27:25.129684 lseek(3, 0, SEEK_SET) = 0 <0.000036>
+993599 16:27:25.129747 read(3, "root:x:0:\ndaemon"..., 4096) = 971 <0.000031>
+993599 16:27:25.129812 close(3)         = 0 <0.000052>
+993599 16:27:25.129907 openat(AT_FDCWD, "/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3 <0.000038>
+993599 16:27:25.129978 newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0 <0.000036>
+993599 16:27:25.130056 getdents64(3, 0x637f50b6ca20 /* 25 entries */, 32768) = 640 <0.000051>
+993599 16:27:25.130142 statx(AT_FDCWD, "/.", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=STATX_ATTR_MOUNT_ROOT, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0 <0.000035>
+993599 16:27:25.130218 lgetxattr("/.", "security.selinux", 0x637f50b6b000, 255) = -1 ENODATA (No data available) <0.000041>
+993599 16:27:25.130298 getxattr("/.", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000040>
+993599 16:27:25.130375 getxattr("/.", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000009>
+993599 16:27:25.130444 statx(AT_FDCWD, "/mnt", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0 <0.000011>
+993599 16:27:25.130532 lgetxattr("/mnt", "security.selinux", 0x637f50b6b110, 255) = -1 ENODATA (No data available) <0.000035>
+993599 16:27:25.130608 getxattr("/mnt", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000042>
+993599 16:27:25.130724 getxattr("/mnt", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000170>
+993599 16:27:25.131005 statx(AT_FDCWD, "/libx32", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFLNK|0777, stx_size=10, ...}) = 0 <0.000046>
+993599 16:27:25.131127 lgetxattr("/libx32", "security.selinux", 0x637f50b6b240, 255) = -1 ENODATA (No data available) <0.000044>
+993599 16:27:25.131250 readlink("/libx32", "usr/libx32", 11) = 10 <0.000042>
+993599 16:27:25.131409 statx(AT_FDCWD, "/etc", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=12288, ...}) = 0 <0.000047>
+993599 16:27:25.131648 lgetxattr("/etc", "security.selinux", 0x637f50b6b390, 255) = -1 ENODATA (No data available) <0.000044>
+993599 16:27:25.131764 getxattr("/etc", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000040>
+993599 16:27:25.131884 getxattr("/etc", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000013>
+993599 16:27:25.131956 statx(AT_FDCWD, "/sys", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=STATX_ATTR_MOUNT_ROOT, stx_mode=S_IFDIR|0555, stx_size=0, ...}) = 0 <0.000057>
+993599 16:27:25.132097 lgetxattr("/sys", "security.selinux", 0x637f50b6b4c0, 255) = -1 ENODATA (No data available) <0.000044>
+993599 16:27:25.132210 getxattr("/sys", "system.posix_acl"..., NULL, 0) = -1 EOPNOTSUPP (Operation not supported) <0.000048>
+993599 16:27:25.132327 statx(AT_FDCWD, "/dev", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=STATX_ATTR_MOUNT_ROOT, stx_mode=S_IFDIR|0755, stx_size=3360, ...}) = 0 <0.000034>
+993599 16:27:25.132437 lgetxattr("/dev", "security.selinux", 0x637f50b6b5f0, 255) = -1 ENODATA (No data available) <0.000050>
+993599 16:27:25.132662 getxattr("/dev", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000022>
+993599 16:27:25.132733 getxattr("/dev", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000042>
+993599 16:27:25.132865 statx(AT_FDCWD, "/lib32", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFLNK|0777, stx_size=9, ...}) = 0 <0.000046>
+993599 16:27:25.132986 lgetxattr("/lib32", "security.selinux", 0x637f50b6b720, 255) = -1 ENODATA (No data available) <0.000051>
+993599 16:27:25.133105 readlink("/lib32", "usr/lib32", 10) = 9 <0.000042>
+993599 16:27:25.133221 statx(AT_FDCWD, "/sbin", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFLNK|0777, stx_size=8, ...}) = 0 <0.000043>
+993599 16:27:25.133332 lgetxattr("/sbin", "security.selinux", 0x637f50b6b760, 255) = -1 ENODATA (No data available) <0.000041>
+993599 16:27:25.133444 readlink("/sbin", "usr/sbin", 9) = 8 <0.000041>
+993599 16:27:25.133552 statx(AT_FDCWD, "/srv", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0 <0.000041>
+993599 16:27:25.133666 lgetxattr("/srv", "security.selinux", 0x637f50b6b7a0, 255) = -1 ENODATA (No data available) <0.000040>
+993599 16:27:25.133772 getxattr("/srv", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000040>
+993599 16:27:25.133876 getxattr("/srv", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000013>
+993599 16:27:25.133938 statx(AT_FDCWD, "/proc", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=STATX_ATTR_MOUNT_ROOT, stx_mode=S_IFDIR|0555, stx_size=0, ...}) = 0 <0.000011>
+993599 16:27:25.133990 lgetxattr("/proc", "security.selinux", 0x637f50b6b7c0, 255) = -1 EOPNOTSUPP (Operation not supported) <0.000013>
+993599 16:27:25.134042 getxattr("/proc", "system.posix_acl"..., NULL, 0) = -1 EOPNOTSUPP (Operation not supported) <0.000011>
+993599 16:27:25.134090 statx(AT_FDCWD, "/tmp", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|S_ISVTX|0777, stx_size=40960, ...}) = 0 <0.000012>
+993599 16:27:25.134146 lgetxattr("/tmp", "security.selinux", 0x637f50b6b7e0, 255) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.134197 getxattr("/tmp", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000009>
+993599 16:27:25.134243 getxattr("/tmp", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.134294 statx(AT_FDCWD, "/media", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0 <0.000011>
+993599 16:27:25.134356 lgetxattr("/media", "security.selinux", 0x637f50b6b800, 255) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.134404 getxattr("/media", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.134443 getxattr("/media", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000009>
+993599 16:27:25.134483 statx(AT_FDCWD, "/lib64", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFLNK|0777, stx_size=9, ...}) = 0 <0.000009>
+993599 16:27:25.134523 lgetxattr("/lib64", "security.selinux", 0x637f50b6b820, 255) = -1 ENODATA (No data available) <0.000010>
+993599 16:27:25.134561 readlink("/lib64", "usr/lib64", 10) = 9 <0.000011>
+993599 16:27:25.134618 statx(AT_FDCWD, "/var", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0 <0.000011>
+993599 16:27:25.134660 lgetxattr("/var", "security.selinux", 0x637f50b6b860, 255) = -1 ENODATA (No data available) <0.000009>
+993599 16:27:25.134699 getxattr("/var", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000008>
+993599 16:27:25.134733 getxattr("/var", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000009>
+993599 16:27:25.134770 statx(AT_FDCWD, "/home", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0 <0.000008>
+993599 16:27:25.134807 lgetxattr("/home", "security.selinux", 0x637f50b6b880, 255) = -1 ENODATA (No data available) <0.000010>
+993599 16:27:25.134862 getxattr("/home", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000010>
+993599 16:27:25.134908 getxattr("/home", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000009>
+993599 16:27:25.134947 statx(AT_FDCWD, "/opt", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0 <0.000010>
+993599 16:27:25.134988 lgetxattr("/opt", "security.selinux", 0x637f50b6b8a0, 255) = -1 ENODATA (No data available) <0.000010>
+993599 16:27:25.135026 getxattr("/opt", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000008>
+993599 16:27:25.135063 getxattr("/opt", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.135120 statx(AT_FDCWD, "/bin", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFLNK|0777, stx_size=7, ...}) = 0 <0.000010>
+993599 16:27:25.135168 lgetxattr("/bin", "security.selinux", 0x637f50b6b8c0, 255) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.135219 readlink("/bin", "usr/bin", 8) = 7 <0.000010>
+993599 16:27:25.135268 statx(AT_FDCWD, "/run", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=STATX_ATTR_MOUNT_ROOT, stx_mode=S_IFDIR|0755, stx_size=1200, ...}) = 0 <0.000013>
+993599 16:27:25.135321 lgetxattr("/run", "security.selinux", 0x637f50b6b900, 255) = -1 ENODATA (No data available) <0.000011>
+993599 16:27:25.135371 getxattr("/run", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.135420 getxattr("/run", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.135588 statx(AT_FDCWD, "/snap", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0 <0.000015>
+993599 16:27:25.135648 lgetxattr("/snap", "security.selinux", 0x637f50b6b920, 255) = -1 ENODATA (No data available) <0.000013>
+993599 16:27:25.135704 getxattr("/snap", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.135753 getxattr("/snap", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.135804 statx(AT_FDCWD, "/usr", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0 <0.000036>
+993599 16:27:25.135884 lgetxattr("/usr", "security.selinux", 0x637f50b6b940, 255) = -1 ENODATA (No data available) <0.000008>
+993599 16:27:25.135918 getxattr("/usr", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000007>
+993599 16:27:25.135948 getxattr("/usr", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000008>
+993599 16:27:25.135986 statx(AT_FDCWD, "/lost+found", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0700, stx_size=16384, ...}) = 0 <0.000010>
+993599 16:27:25.136041 lgetxattr("/lost+found", "security.selinux", 0x637f50b6b960, 255) = -1 ENODATA (No data available) <0.000011>
+993599 16:27:25.136088 getxattr("/lost+found", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000010>
+993599 16:27:25.136133 getxattr("/lost+found", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000010>
+993599 16:27:25.136180 statx(AT_FDCWD, "/root", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0700, stx_size=4096, ...}) = 0 <0.000011>
+993599 16:27:25.136232 lgetxattr("/root", "security.selinux", 0x637f50b6b980, 255) = -1 ENODATA (No data available) <0.000011>
+993599 16:27:25.136280 getxattr("/root", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000011>
+993599 16:27:25.136329 getxattr("/root", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000009>
+993599 16:27:25.136369 statx(AT_FDCWD, "/lib", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFLNK|0777, stx_size=7, ...}) = 0 <0.000011>
+993599 16:27:25.136405 lgetxattr("/lib", "security.selinux", 0x637f50b6b9a0, 255) = -1 ENODATA (No data available) <0.000009>
+993599 16:27:25.136440 readlink("/lib", "usr/lib", 8) = 7 <0.000010>
+993599 16:27:25.136477 statx(AT_FDCWD, "/..", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=STATX_ATTR_MOUNT_ROOT, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0 <0.000010>
+993599 16:27:25.136517 lgetxattr("/..", "security.selinux", 0x637f50b6b9e0, 255) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.136571 getxattr("/..", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.136619 getxattr("/..", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.136669 statx(AT_FDCWD, "/boot", AT_STATX_SYNC_AS_STAT|AT_SYMLINK_NOFOLLOW|AT_NO_AUTOMOUNT, STATX_MODE|STATX_NLINK|STATX_UID|STATX_GID|STATX_MTIME|STATX_SIZE, {stx_mask=STATX_BASIC_STATS|STATX_MNT_ID, stx_attributes=0, stx_mode=S_IFDIR|0755, stx_size=4096, ...}) = 0 <0.000013>
+993599 16:27:25.136736 lgetxattr("/boot", "security.selinux", 0x637f50b6ba00, 255) = -1 ENODATA (No data available) <0.000013>
+993599 16:27:25.136792 getxattr("/boot", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000010>
+993599 16:27:25.136838 getxattr("/boot", "system.posix_acl"..., NULL, 0) = -1 ENODATA (No data available) <0.000012>
+993599 16:27:25.136906 getdents64(3, 0x637f50b6ca20 /* 0 entries */, 32768) = 0 <0.000011>
+993599 16:27:25.136952 close(3)         = 0 <0.000019>
+993599 16:27:25.137039 openat(AT_FDCWD, "/usr/share/locale/C.UTF-8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory) <0.000056>
+993599 16:27:25.137167 openat(AT_FDCWD, "/usr/share/locale/C.utf8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory) <0.000045>
+993599 16:27:25.137282 openat(AT_FDCWD, "/usr/share/locale/C/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory) <0.000043>
+993599 16:27:25.137390 openat(AT_FDCWD, "/usr/share/locale-langpack/C.UTF-8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory) <0.000044>
+993599 16:27:25.137503 openat(AT_FDCWD, "/usr/share/locale-langpack/C.utf8/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory) <0.000042>
+993599 16:27:25.137608 openat(AT_FDCWD, "/usr/share/locale-langpack/C/LC_MESSAGES/coreutils.mo", O_RDONLY) = -1 ENOENT (No such file or directory) <0.000041>
+993599 16:27:25.137721 newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0xe), ...}, AT_EMPTY_PATH) = 0 <0.000040>
+993599 16:27:25.137832 write(1, "total 120\n", 10) = 10 <0.000069>
+993599 16:27:25.138033 openat(AT_FDCWD, "/etc/localtime", O_RDONLY|O_CLOEXEC) = 3 <0.000044>
+993599 16:27:25.138144 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=114, ...}, AT_EMPTY_PATH) = 0 <0.000045>
+993599 16:27:25.138258 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=114, ...}, AT_EMPTY_PATH) = 0 <0.000039>
+993599 16:27:25.138367 read(3, "\x54\x5a\x69\x66\x32\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"..., 4096) = 114 <0.000046>
+993599 16:27:25.138479 lseek(3, -60, SEEK_CUR) = 54 <0.000039>
+993599 16:27:25.138577 read(3, "\x54\x5a\x69\x66\x32\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"..., 4096) = 60 <0.000050>
+993599 16:27:25.138746 close(3)         = 0 <0.000050>
+993599 16:27:25.138893 write(1, "drwxr-xr-x  19 r"..., 46) = 46 <0.000062>
+993599 16:27:25.139077 write(1, "drwxr-xr-x  19 r"..., 47) = 47 <0.000036>
+993599 16:27:25.139604 write(1, "lrwxrwxrwx   1 r"..., 59) = 59 <0.001474>
+993599 16:27:25.141191 write(1, "drwxr-xr-x   4 r"..., 49) = 49 <0.000066>
+993599 16:27:25.141362 write(1, "drwxr-xr-x  15 r"..., 48) = 48 <0.000050>
+993599 16:27:25.141492 write(1, "drwxr-xr-x 128 r"..., 48) = 48 <0.000048>
+993599 16:27:25.141622 write(1, "drwxr-xr-x   3 r"..., 49) = 49 <0.000047>
+993599 16:27:25.141744 write(1, "lrwxrwxrwx   1 r"..., 59) = 59 <0.000175>
+993599 16:27:25.143271 write(1, "lrwxrwxrwx   1 r"..., 63) = 63 <0.001576>
+993599 16:27:25.144985 write(1, "lrwxrwxrwx   1 r"..., 63) = 63 <0.000033>
+993599 16:27:25.145111 write(1, "lrwxrwxrwx   1 r"..., 65) = 65 <0.000222>
+993599 16:27:25.145884 write(1, "drwx------   2 r"..., 55) = 55 <0.000077>
+993599 16:27:25.146033 write(1, "drwxr-xr-x   2 r"..., 50) = 50 <0.000047>
+993599 16:27:25.146151 write(1, "drwxr-xr-x   2 r"..., 48) = 48 <0.000035>
+993599 16:27:25.146270 write(1, "drwxr-xr-x   9 r"..., 48) = 48 <0.000010>
+993599 16:27:25.146333 write(1, "dr-xr-xr-x 387 r"..., 49) = 49 <0.000030>
+993599 16:27:25.146414 write(1, "drwx------   9 r"..., 49) = 49 <0.000037>
+993599 16:27:25.146485 write(1, "drwxr-xr-x  37 r"..., 48) = 48 <0.000029>
+993599 16:27:25.146565 write(1, "lrwxrwxrwx   1 r"..., 61) = 61 <0.000010>
+993599 16:27:25.146631 write(1, "drwxr-xr-x   9 r"..., 49) = 49 <0.000049>
+993599 16:27:25.146719 write(1, "drwxr-xr-x   2 r"..., 48) = 48 <0.000040>
+993599 16:27:25.146821 write(1, "dr-xr-xr-x  13 r"..., 48) = 48 <0.000028>
+993599 16:27:25.146922 write(1, "drwxrwxrwt  17 r"..., 48) = 48 <0.000015>
+993599 16:27:25.147009 write(1, "drwxr-xr-x  14 r"..., 48) = 48 <0.000048>
+993599 16:27:25.147108 write(1, "drwxr-xr-x  13 r"..., 48) = 48 <0.000039>
+993599 16:27:25.147186 close(1)         = 0 <0.000039>
+993599 16:27:25.147256 close(2)         = 0 <0.000031>
+993599 16:27:25.147347 exit_group(0)    = ?
+993599 16:27:25.147754 +++ exited with 0 +++
