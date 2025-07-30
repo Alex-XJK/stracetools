@@ -7,6 +7,10 @@ __author__ = "Alex Jiakai Xu"
 __email__ = "jiakai.xu@columbia.edu"
 
 # Import main classes for easy access
+from .parser import TraceEventType, TraceEvent, StraceParser
 
-
-__all__ = []
+__all__ = [
+    "TraceEventType",
+    "TraceEvent",
+    "StraceParser",
+]
