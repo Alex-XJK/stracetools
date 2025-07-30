@@ -1,42 +1,73 @@
-from typing import List, Dict, Optional, Set, Tuple, Any
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
+import json
+import logging
 import plotly.express as px
-from datetime import datetime, timedelta
-from collections import defaultdict
-import numpy as np
+import plotly.graph_objects as go
+from datetime import timedelta
+from typing import List, Dict, Optional, Set, Tuple, Any
 
-# Assume these are imported from other modules
 from .parser import TraceEvent, TraceEventType
 from .analyzer import StraceAnalyzer, ProcessInfo
 
+
+logger = logging.getLogger(__name__)
 
 class StraceVisualizer:
     """
     Interactive visualization tools for strace analysis results
     """
 
-    def __init__(self, analyzer: StraceAnalyzer):
+    def __init__(self, analyzer: StraceAnalyzer, color_map_file: Optional[str] = None, auto_fillup: bool = True):
         self.analyzer = analyzer
         self.events = analyzer.events
 
         # Generate consistent colors for syscalls and PIDs
-        self.syscall_colors = self._generate_syscall_colors()
+        self.syscall_colors = self._generate_syscall_colors(color_map_file, auto_fillup)
         self.pid_colors = self._generate_pid_colors()
 
-    def _generate_syscall_colors(self) -> Dict[str, str]:
+    def _generate_syscall_colors(self, color_map_file: Optional[str] = None, auto_fillup: bool = True) -> Dict[str, str]:
         """
-        Generate consistent colors for different syscalls
+        Generate consistent colors for different syscalls using a structured approach.
+
+        Args:
+            color_map_file: Path to JSON file containing syscall-color mappings
+            auto_fillup: If True, generate random colors for unmapped syscalls;
+                        if False, use gray for unmapped syscalls
+
+        Returns:
+            Dictionary mapping syscall names to color strings
         """
         syscalls = sorted(self.analyzer.get_syscall_names())
         if not syscalls:
             return {}
 
-        # Use a color palette that works well for many categories
-        colors = px.colors.qualitative.Set3 + px.colors.qualitative.Pastel + px.colors.qualitative.Set1
-        color_cycle = colors * ((len(syscalls) // len(colors)) + 1)
+        color_map = {}
 
-        return {syscall: color_cycle[i] for i, syscall in enumerate(syscalls)}
+        # Load user-provided color mappings if file is provided
+        if color_map_file:
+            try:
+                with open(color_map_file, 'r') as f:
+                    user_colors = json.load(f)
+                    color_map = {syscall: color for syscall, color in user_colors.items() if syscall in syscalls}
+            except (FileNotFoundError, json.JSONDecodeError) as e:
+                logger.warning(f"Could not load color map file {color_map_file}: {e}")
+
+        # Find syscalls not covered by user mapping
+        unmapped_syscalls = [syscall for syscall in syscalls if syscall not in color_map]
+
+        if unmapped_syscalls:
+            if auto_fillup:
+                # Generate random colors for unmapped syscalls
+                colors = px.colors.qualitative.Set3 + px.colors.qualitative.Pastel + px.colors.qualitative.Set1
+                color_cycle = colors * ((len(unmapped_syscalls) // len(colors)) + 1)
+
+                for i, syscall in enumerate(unmapped_syscalls):
+                    color_map[syscall] = color_cycle[i]
+            else:
+                # Use gray for unmapped syscalls
+                for syscall in unmapped_syscalls:
+                    color_map[syscall] = '#808080'
+
+        return color_map
 
     def _generate_pid_colors(self) -> Dict[int, str]:
         """
