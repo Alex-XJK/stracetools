@@ -32,7 +32,7 @@ class TraceEvent:
     args: List[str] = None  # raw argument strings
     return_value: Optional[str] = None
     error_msg: Optional[str] = None
-    duration: Optional[float] = None  # in microseconds
+    duration: Optional[float] = None  # in seconds
     raw_line: str = ""  # keep original line for debugging
 
     def __post_init__(self):
@@ -72,7 +72,7 @@ class TraceEvent:
 
             # Add duration if present
             if self.duration:
-                result += f" ~ {self.duration:.6f}us"
+                result += f" ~ {self.duration:.6f}s"
 
         elif self.event_type == TraceEventType.SIGNAL or self.event_type == TraceEventType.EXIT:
             result += f"{self.args[0] if self.args else 'unknown'}"
@@ -143,7 +143,7 @@ class StraceParser:
             r'\+\+\+\s*(.+?)\s*\+\+\+'  # exit info
         )
 
-    def parse_timestamp(self, time_str: str) -> datetime:
+    def _parse_timestamp(self, time_str: str) -> datetime:
         """
         Convert time string (HH:MM:SS.microseconds) to datetime
         """
@@ -158,7 +158,7 @@ class StraceParser:
             return datetime.now()
 
     @staticmethod
-    def parse_args(args_str: str) -> List[str]:
+    def _parse_args(args_str: str) -> List[str]:
         """
         Parse syscall arguments string into a list
         """
@@ -215,7 +215,7 @@ class StraceParser:
         return args
 
     @staticmethod
-    def parse_return_value(return_str: str) -> tuple[str, Optional[str]]:
+    def _parse_return_value(return_str: str) -> tuple[str, Optional[str]]:
         """
         Parse return value and optional error message
         """
@@ -250,14 +250,14 @@ class StraceParser:
         match = self.syscall_pattern.match(line)
         if match:
             pid = int(match.group(1))
-            timestamp = self.parse_timestamp(match.group(2))
+            timestamp = self._parse_timestamp(match.group(2))
             syscall_name = match.group(3)
             args_str = match.group(4)
             return_str = match.group(5)
             duration_str = match.group(6)
 
-            args = self.parse_args(args_str)
-            return_value, error_msg = self.parse_return_value(return_str)
+            args = self._parse_args(args_str)
+            return_value, error_msg = self._parse_return_value(return_str)
             duration = float(duration_str) if duration_str else None
 
             return TraceEvent(
@@ -276,11 +276,11 @@ class StraceParser:
         match = self.unfinished_pattern.match(line)
         if match:
             pid = int(match.group(1))
-            timestamp = self.parse_timestamp(match.group(2))
+            timestamp = self._parse_timestamp(match.group(2))
             syscall_name = match.group(3)
             args_str = match.group(4)
 
-            args = self.parse_args(args_str)
+            args = self._parse_args(args_str)
 
             event = TraceEvent(
                 pid=pid,
@@ -299,7 +299,7 @@ class StraceParser:
         match = self.resumed_pattern.match(line)
         if match:
             pid = int(match.group(1))
-            timestamp = self.parse_timestamp(match.group(2))
+            timestamp = self._parse_timestamp(match.group(2))
             syscall_name = match.group(3)
             remaining_args = match.group(4)
             return_str = match.group(5)
@@ -312,11 +312,11 @@ class StraceParser:
 
                 # Combine arguments
                 if remaining_args.strip():
-                    combined_args = unfinished_event.args + self.parse_args(remaining_args)
+                    combined_args = unfinished_event.args + self._parse_args(remaining_args)
                 else:
                     combined_args = unfinished_event.args
 
-                return_value, error_msg = self.parse_return_value(return_str)
+                return_value, error_msg = self._parse_return_value(return_str)
                 duration = float(duration_str) if duration_str else None
 
                 # Create completed event
@@ -333,7 +333,7 @@ class StraceParser:
                 )
             else:
                 # Orphaned resumed call - create event anyway
-                return_value, error_msg = self.parse_return_value(return_str)
+                return_value, error_msg = self._parse_return_value(return_str)
                 duration = float(duration_str) if duration_str else None
 
                 return TraceEvent(
@@ -341,7 +341,7 @@ class StraceParser:
                     timestamp=timestamp,
                     event_type=TraceEventType.RESUMED,
                     name=syscall_name,
-                    args=self.parse_args(remaining_args) if remaining_args.strip() else [],
+                    args=self._parse_args(remaining_args) if remaining_args.strip() else [],
                     return_value=return_value,
                     error_msg=error_msg,
                     duration=duration,
@@ -352,7 +352,7 @@ class StraceParser:
         match = self.signal_pattern.match(line)
         if match:
             pid = int(match.group(1))
-            timestamp = self.parse_timestamp(match.group(2))
+            timestamp = self._parse_timestamp(match.group(2))
             signal_info = match.group(3)
 
             return TraceEvent(
@@ -368,7 +368,7 @@ class StraceParser:
         match = self.exit_pattern.match(line)
         if match:
             pid = int(match.group(1))
-            timestamp = self.parse_timestamp(match.group(2))
+            timestamp = self._parse_timestamp(match.group(2))
             exit_info = match.group(3)
 
             return TraceEvent(
