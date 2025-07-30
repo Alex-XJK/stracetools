@@ -8,9 +8,13 @@ __email__ = "jiakai.xu@columbia.edu"
 
 # Import main classes for easy access
 from .parser import TraceEventType, TraceEvent, StraceParser
+from .analyzer import ProcessInfo, SyscallStats, StraceAnalyzer
 
 __all__ = [
     "TraceEventType",
     "TraceEvent",
     "StraceParser",
+    "ProcessInfo",
+    "SyscallStats",
+    "StraceAnalyzer"
 ]
