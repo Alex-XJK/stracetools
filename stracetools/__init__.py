@@ -18,3 +18,10 @@ __all__ = [
     "SyscallStats",
     "StraceAnalyzer"
 ]
+
+# Optional visualization features
+try:
+    from .visualizer import StraceVisualizer
+    __all__.append("StraceVisualizer")
+except ImportError:
+    pass

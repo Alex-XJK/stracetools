@@ -43,6 +43,7 @@ dev = [
 viz = [
     "matplotlib>=3.5",
     "plotly>=5.0",
+    "numpy>=1.20",
 ]
 
 [project.urls]
