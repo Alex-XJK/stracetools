@@ -68,6 +68,7 @@ print(analyzer.summary())
 - [x] Process activity visualization
 
 ### Coming Soon 🚧
+- [ ] **Lazy, chainable query** interface
 - [ ] **Official publication** on PyPI
 - [ ] **Export to CSV/JSON** for further analysis
 - [ ] **Enhance processing speed** for large strace files

@@ -407,3 +407,6 @@ Top 5 Syscalls by Count:
             summary += f"  {syscall}: {count}\n"
 
         return summary
+
+
+# TODO: Lazy, chainable query interface, possibly support multi-threaded processing

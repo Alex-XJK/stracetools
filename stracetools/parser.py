@@ -405,3 +405,5 @@ class StraceParser:
             logger.warning(f"Warning: Unfinished syscall without resume: {unfinished_event.name} (PID {unfinished_event.pid})")
 
         return events
+
+    # TODO: Export to CSV/JSON for further analysis

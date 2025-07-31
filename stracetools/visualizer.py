@@ -344,3 +344,6 @@ class StraceVisualizer:
             hover_lines.append(f"<b>Args:</b> {args_text}")
 
         return "<br>".join(hover_lines)
+
+# TODO: Enhance plotting speed for large strace events,
+#  plotting a 100 MB strace file can take 10 minutes, and the generated plot is very slow to interact with.
