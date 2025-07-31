@@ -6,7 +6,7 @@ from datetime import timedelta
 from typing import List, Dict, Optional, Set, Tuple, Any
 
 from .parser import TraceEvent, TraceEventType
-from .analyzer import StraceAnalyzer, ProcessInfo
+from .analyzer import StraceAnalyzer
 
 
 logger = logging.getLogger(__name__)
@@ -44,6 +44,9 @@ class StraceVisualizer:
 
         # Load user-provided color mappings if file is provided
         if color_map_file:
+            if not color_map_file.endswith('.json'):
+                logger.error(f"Color map file {color_map_file} must be a JSON file")
+                return {}
             try:
                 with open(color_map_file, 'r') as f:
                     user_colors = json.load(f)
