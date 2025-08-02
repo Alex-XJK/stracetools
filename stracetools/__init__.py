@@ -9,6 +9,7 @@ __email__ = "jiakai.xu@columbia.edu"
 # Import main classes for easy access
 from .parser import TraceEventType, TraceEvent, StraceParser
 from .analyzer import ProcessInfo, SyscallStats, StraceAnalyzer
+from .visualizer import StraceVisualizer
 
 __all__ = [
     "TraceEventType",
@@ -16,12 +17,6 @@ __all__ = [
     "StraceParser",
     "ProcessInfo",
     "SyscallStats",
-    "StraceAnalyzer"
+    "StraceAnalyzer",
+    "StraceVisualizer"
 ]
-
-# Optional visualization features
-try:
-    from .visualizer import StraceVisualizer
-    __all__.append("StraceVisualizer")
-except ImportError:
-    pass

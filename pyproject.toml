@@ -29,7 +29,7 @@ classifiers = [
 ]
 keywords = ["strace", "system calls", "debugging", "performance analysis", "linux"]
 requires-python = ">=3.8"
-dependencies = []
+dependencies = ["plotly", "numpy"]
 
 [project.optional-dependencies]
 dev = [
@@ -39,9 +39,6 @@ dev = [
     "flake8>=5.0",
     "mypy>=1.0",
     "isort>=5.0",
-]
-viz = [
-    "plotly>=5.0",
 ]
 
 [project.urls]
