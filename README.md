@@ -72,10 +72,11 @@ print(analyzer.summary())
 - [x] Rich statistics and insights
 - [x] Interactive timeline Gantt charts
 - [x] Process activity visualization
+- [x] Official publication on PyPI
+
 
 ### Coming Soon 🚧
 - [ ] **Lazy, chainable query** interface
-- [ ] **Official publication** on PyPI
 - [ ] **Export to CSV/JSON** for further analysis
 - [ ] **Enhance processing speed** for large strace files
 - [ ] **Complete visualization suite** (frequency charts, duration histograms)
@@ -193,7 +194,7 @@ activity_fig.show()
 
 ## License 📄
 
-MIT License - see [LICENSE](LICENSE) file for details.
+Apache License 2.0 - see [LICENSE](LICENSE) file for details.
 
 ---
 
