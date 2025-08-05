@@ -1,10 +1,125 @@
 import re
 from collections import defaultdict, Counter
+from collections.abc import Collection
 from dataclasses import dataclass
 from datetime import datetime, timedelta
-from typing import Optional, List, Dict, Set
+from typing import Optional, List, Dict, Set, Callable, Iterable, Iterator
 
 from .parser import TraceEvent, TraceEventType
+
+
+class TraceEventQuery:
+    """
+    A class to lazily and chain filters on a collection of TraceEvent objects.
+    """
+    def __init__(self, events: Iterable[TraceEvent]):
+        self._source = events
+        self._filters: list[Callable[[TraceEvent], bool]] = []
+
+    def by_pid(self, pids: int | Collection[int]) -> "TraceEventQuery":
+        """
+        Filter events by one or more PIDs.
+        :since: v0.2.0
+        :param pids: An integer PID or a collection of PIDs to filter by.
+        """
+        if isinstance(pids, int):
+            self._filters.append(lambda e: e.pid == pids)
+        else:
+            pid_set = set(pids)
+            self._filters.append(lambda e: e.pid in pid_set)
+        return self
+
+    def by_syscall_name(self, names: str | Collection[str]) -> "TraceEventQuery":
+        """
+        Filter events by one or more syscall names.
+        :since: v0.2.0
+        :param names: A string syscall name or a collection of syscall names to filter by.
+        """
+        if isinstance(names, str):
+            self._filters.append(lambda e: e.name == names)
+        else:
+            name_set = set(names)
+            self._filters.append(lambda e: e.name in name_set)
+        return self
+
+    def by_syscall_args(self, required_args: list[str]) -> "TraceEventQuery":
+        """
+        Filter events by required arguments in syscall.
+        :since: v0.2.0
+        :param required_args: A list of argument substrings that must be present in the syscall arguments.
+        """
+        def _match_args(event_args: list[str], targets: list[str]) -> bool:
+            return all(any(t in a for a in event_args) for t in targets)
+
+        self._filters.append(lambda e: _match_args(e.args, required_args))
+        return self
+
+    def by_type(self, event_type: TraceEventType) -> "TraceEventQuery":
+        """
+        Filter events by their type (e.g., SYSCALL, SIGNAL, EXIT).
+        :since: v0.2.0
+        :param event_type: The TraceEventType to filter by.
+        """
+        self._filters.append(lambda e: e.event_type == event_type)
+        return self
+
+    def by_time_range(self, start: datetime, end: datetime) -> "TraceEventQuery":
+        """
+        Filter events that occurred within a specific time range.
+        :since: v0.2.0
+        :param start: Start datetime (inclusive).
+        :param end: End datetime (inclusive).
+        """
+        self._filters.append(lambda e: start <= e.timestamp <= end)
+        return self
+
+    def with_errors(self) -> "TraceEventQuery":
+        """
+        Filter events that resulted in an error (i.e., have a non-null error_msg).
+        :since: v0.2.0
+        """
+        self._filters.append(lambda e: e.error_msg is not None)
+        return self
+
+    def with_success(self) -> "TraceEventQuery":
+        """
+        Filter events that were successful (i.e., have a null error_msg).
+        :since: v0.2.0
+        """
+        self._filters.append(lambda e: e.error_msg is None)
+        return self
+
+    def slow_calls(self, min_duration: float) -> "TraceEventQuery":
+        """
+        Filter events that took longer than a specified duration (in seconds).
+        :since: v0.2.0
+        :param min_duration: Minimum duration in seconds.
+        """
+        self._filters.append(lambda e: e.duration is not None and e.duration >= min_duration)
+        return self
+
+    def by_filename_regex(self, pattern: str) -> "TraceEventQuery":
+        """
+        Filter events where any argument matches the given regex pattern.
+        :param pattern: Regex pattern to match against syscall arguments.
+        """
+        regex = re.compile(pattern)
+        self._filters.append(lambda e: any(regex.search(arg) for arg in e.args))
+        return self
+
+    def __iter__(self) -> Iterator[TraceEvent]:
+        return (e for e in self._source if all(f(e) for f in self._filters))
+
+    def collect(self, sort_by_timestamp: bool = True) -> list[TraceEvent]:
+        """
+        Collect the filtered events into a list, optionally sorted by timestamp.
+        :param sort_by_timestamp: Whether to sort the results by timestamp.
+        :return: A list of filtered TraceEvent objects.
+        """
+        results = list(self)
+        if sort_by_timestamp:
+            results.sort(key=lambda e: e.timestamp)
+        return results
 
 
 @dataclass
@@ -143,42 +258,6 @@ class StraceAnalyzer:
             List of TraceEvent objects of the specified type
         """
         return self.events_by_type.get(event_type, [])
-
-    def filter_by_time_range(self, start_time: datetime, end_time: datetime) -> List[TraceEvent]:
-        """
-        Filter events within a specific time range
-
-        Args:
-            start_time: Start of the time range
-            end_time: End of the time range
-
-        Returns:
-            List of TraceEvent objects that fall within the specified time range
-        """
-        return [e for e in self.events if start_time <= e.timestamp <= end_time]
-
-    def filter_with_errors(self) -> List[TraceEvent]:
-        """
-        Return only events that had errors
-
-        Returns:
-            List of TraceEvent objects that had errors (error_msg is not None)
-        """
-        return [e for e in self.events if e.error_msg]
-
-    def filter_slow_calls(self, min_duration: float) -> List[TraceEvent]:
-        """
-        Return syscalls that took longer than min_duration seconds
-
-        Args:
-            min_duration: Minimum duration in seconds to filter syscalls
-
-        Returns:
-            List of TraceEvent objects that are syscalls with duration >= min_duration
-        """
-        return [e for e in self.events
-                if e.duration and e.duration >= min_duration]
-
     def get_process_info(self, pid: int) -> Optional[ProcessInfo]:
         """
         Get detailed information about a specific process
@@ -248,57 +327,6 @@ class StraceAnalyzer:
             success_count=success_count
         )
 
-    def get_file_operations(self, filename_pattern: Optional[str] = None) -> List[TraceEvent]:
-        """
-        Get all file-related operations (open, read, write, close, etc.)
-
-        Args:
-            filename_pattern: Optional regex pattern to match filenames
-
-        Returns:
-            List of TraceEvent objects for file operations
-        """
-        file_syscalls = ['open', 'openat', 'read', 'write', 'close', 'lseek',
-                         'stat', 'fstat', 'lstat', 'access', 'faccessat',
-                         'readdir', 'getdents', 'getdents64', 'unlink', 'rmdir',
-                         'mkdir', 'rename', 'chmod', 'chown', 'truncate', 'ftruncate']
-
-        file_events = []
-        for syscall in file_syscalls:
-            file_events.extend(self.filter_by_syscall(syscall))
-
-        # Filter by filename pattern if provided
-        if filename_pattern:
-            pattern = re.compile(filename_pattern)
-            filtered_events = []
-            for event in file_events:
-                # Check if any argument matches the filename pattern
-                for arg in event.args:
-                    if pattern.search(arg):
-                        filtered_events.append(event)
-                        break
-            return filtered_events
-
-        return file_events
-
-    def get_network_operations(self) -> List[TraceEvent]:
-        """
-        Get all network-related operations
-
-        Returns:
-            List of TraceEvent objects for network operations
-        """
-        network_syscalls = ['socket', 'bind', 'listen', 'accept', 'accept4',
-                            'connect', 'send', 'recv', 'sendto', 'recvfrom',
-                            'sendmsg', 'recvmsg', 'getsockopt', 'setsockopt',
-                            'getpeername', 'getsockname', 'shutdown']
-
-        network_events = []
-        for syscall in network_syscalls:
-            network_events.extend(self.filter_by_syscall(syscall))
-
-        return network_events
-
     def get_top_syscalls(self, limit: int = 10, by: str = 'count') -> List[tuple]:
         """
         Get top syscalls by count or total duration
@@ -364,6 +392,14 @@ class StraceAnalyzer:
 
         return dict(timeline)
 
+    def query(self) -> TraceEventQuery:
+        """
+        Create a query object for filtering events.
+        Since v0.2.0, this new lazy and chainable filtering mechanism replaces the older individual filter methods.
+        :return: A TraceEventQuery instance for chaining filters
+        """
+        return TraceEventQuery(self.events)
+
     def summary(self) -> str:
         """
         Generate a text summary of the trace
@@ -409,4 +445,55 @@ Top 5 Syscalls by Count:
         return summary
 
 
-# TODO: Lazy, chainable query interface, possibly support multi-threaded processing
+class SyscallGroups:
+    FILE_IO = [
+        "read", "write", "pread64", "pwrite64", "readv", "writev",
+        "splice", "sendfile", "copy_file_range", "fdatasync", "dup", "dup2", "dup3"
+    ]
+
+    FILESYSTEM = [
+        "open", "openat", "creat", "unlink", "unlinkat", "rename", "renameat",
+        "mkdir", "mkdirat", "rmdir", "getdents", "getdents64", "stat", "lstat",
+        "fstat", "newfstatat", "access", "chmod", "fchmod", "chown", "truncate", "ftruncate",
+        "mount", "umount", "umount2", "link", "symlink", "readlink", "readlinkat",
+    ]
+
+    NETWORK = [
+        "socket", "connect", "accept", "accept4", "bind", "listen", "getsockname",
+        "getpeername", "sendto", "recvfrom", "sendmsg", "recvmsg", "shutdown",
+        "setsockopt", "getsockopt", "socketpair"
+    ]
+
+    PROCESS = [
+        "fork", "vfork", "clone", "clone3", "execve", "execveat",
+        "wait4", "waitid", "exit", "exit_group", "getpid", "getppid"
+    ]
+
+    MEMORY = [
+        "mmap", "munmap", "brk", "mremap", "mprotect", "msync", "mlock", "munlock", "madvise"
+    ]
+
+    SYNC = [
+        "futex", "nanosleep", "clock_nanosleep", "sched_yield"
+    ]
+
+    SIGNAL = [
+        "rt_sigaction", "rt_sigprocmask", "rt_sigreturn", "kill", "tgkill", "tkill", "sigaltstack"
+    ]
+
+    IPC = [
+        "shmget", "shmat", "shmdt", "shmctl", "semget", "semop", "semctl",
+        "msgget", "msgsnd", "msgrcv", "msgctl", "pipe", "pipe2"
+    ]
+
+    IOCTL = [
+        "ioctl", "fcntl", "poll", "select", "pselect6", "epoll_wait", "epoll_pwait", "epoll_ctl", "epoll_create1"
+    ]
+
+    SECURITY = [
+        "capget", "capset", "seccomp", "setuid", "setgid", "setgroups", "setresuid", "setresgid"
+    ]
+
+    SYSINFO = [
+        "uname", "getrlimit", "setrlimit", "prlimit64", "sysinfo", "gettimeofday", "times"
+    ]

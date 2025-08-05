@@ -73,10 +73,10 @@ print(analyzer.summary())
 - [x] Interactive timeline Gantt charts
 - [x] Process activity visualization
 - [x] Official publication on PyPI
+- [x] Lazy, chainable query interface  -- since v0.2.0
 
 
 ### Coming Soon 🚧
-- [ ] **Lazy, chainable query** interface
 - [ ] **Export to CSV/JSON** for further analysis
 - [ ] **Enhance processing speed** for large strace files
 - [ ] **Complete visualization suite** (frequency charts, duration histograms)
@@ -114,7 +114,7 @@ events = parser.parse_file("app_strace.out")
 
 ```
 
-### 🔍 **Powerful Filtering & Analysis**
+### 📊 **Rich Statistics**
 
 ```python
 # Initialize analyzer with parsed events
@@ -123,29 +123,9 @@ analyzer = StraceAnalyzer(events)
 # Get all PIDs
 pids = analyzer.get_pids()
 
-# Filter by process
-events_1234 = analyzer.filter_by_pid(1234)
-
 # Get all syscall names
 syscall_names = analyzer.get_syscall_names()
 
-# Filter by syscall with argument matching
-file_reads = analyzer.filter_by_syscall("read", args=["file.txt"])
-
-# Filter by event type of signals
-signal_events = analyzer.filter_by_event_type(TraceEventType.SIGNAL)
-
-# Time-based filtering
-recent_events = analyzer.filter_by_time_range(start_time, end_time)
-
-# Performance analysis
-error_calls = analyzer.filter_with_errors()
-slow_calls = analyzer.filter_slow_calls(0.01)  # > 10ms
-```
-
-### 📊 **Rich Statistics**
-
-```python
 # Process information
 process_info = analyzer.get_process_info(1234)
 print(f"Runtime: {process_info.last_seen - process_info.first_seen}")
@@ -161,15 +141,61 @@ print(f"Error rate: {read_stats.error_count / read_stats.count:.1%}")
 top_frequent = analyzer.get_top_syscalls(10, by='count')
 top_expensive = analyzer.get_top_syscalls(10, by='duration')
 
-# File operations analysis
-file_ops = analyzer.get_file_operations(filename_pattern=r"\.log$")
-
-# Network operations
-network_ops = analyzer.get_network_operations()
-
 # Timeline analysis
 timeline = analyzer.get_timeline_summary(bucket_size=timedelta(seconds=1))
 ```
+
+### 🔍 **Powerful Filtering and Analysis**
+
+<details>
+<summary> 
+Individual Filters (before v0.2.0)
+</summary>
+
+```python
+# Filter by process
+events_1234 = analyzer.by_pid(1234)
+
+# Filter by syscall with argument matching
+file_reads = analyzer.filter_by_syscall("read", args=["file.txt"])
+
+# Filter by event type of signals
+signal_events = analyzer.filter_by_event_type(TraceEventType.SIGNAL)
+
+# Time-based filtering
+recent_events = analyzer.filter_by_time_range(start_time, end_time)
+
+# Performance analysis
+error_calls = analyzer.filter_with_errors()
+slow_calls = analyzer.filter_slow_calls(0.01)  # > 10ms
+```
+</details>
+
+#### Chainable Queries (since v0.2.0)
+
+```python
+# Chainable filtering example
+filtered_events = (
+    analyzer.query()
+    .by_pid(1234)  # Filter by specific PID
+    .by_syscall_name(SyscallGroups.FILE_IO) # Filter by syscall group
+    .with_success() # Only successful syscalls
+    .collect(sort_by_timestamp=True) # Collect results
+)
+```
+
+A list of available query methods is:
+
+- `by_pid(pids: int | Collection[int])` - Filter events by one or more PIDs.
+- `by_syscall_name(names: str | Collection[str])` - Filter events by one or more syscall names.
+- `by_syscall_args(required_args: list[str])` - Filter events by required arguments in syscall.
+- `by_type(event_type: TraceEventType)` - Filter events by their type (e.g., SYSCALL, SIGNAL, EXIT).
+- `by_time_range(start: datetime, end: datetime)` - Filter events that occurred within a specific time range.
+- `with_errors()` - Filter events that resulted in an error (i.e., have a non-null error_msg).
+- `with_success()` - Filter events that were successful (i.e., have a null error_msg).
+- `slow_calls(min_duration: float)` - Filter events that took longer than a specified duration (in seconds).
+- `by_filename_regex(pattern: str)` - Filter events by matching the filename against a regex pattern.
+
 
 ### 📈 **Interactive Visualizations** *(Partial - In Progress)*
 
@@ -189,7 +215,7 @@ activity_fig = visualizer.plot_process_activity()
 activity_fig.show()
 ```
 
-<img alt="Gantt Chart Example" height="500" src="./docs/filtered_events.svg"/>
+<img alt="Gantt Chart Example" height="500" src="https://raw.githubusercontent.com/Alex-XJK/stracetools/refs/heads/main/docs/filtered_events.svg"/>
 
 
 ## License 📄
