@@ -3,6 +3,13 @@
 All notable changes to this project will be documented here.  
 This changelog follows a casual style intended for incremental progress tracking.
 
+## [1.0.0] - 2025-08-08
+🎉 First stable release! We believe the existing functionality is solid enough for general use.
+
+## [0.2.1] - 2025-08-08
+### Improved
+- Enhanced some of the APIs to run in parallel with better performance.
+
 ## [0.2.0] - 2025-08-05
 ### Added
 - **Lazy, chainable query interface**:

@@ -1,7 +1,7 @@
 import json
 import logging
 from collections import defaultdict
-
+import importlib.resources as resources
 import plotly.express as px
 import plotly.graph_objects as go
 from datetime import timedelta
@@ -12,6 +12,10 @@ from .analyzer import StraceAnalyzer
 
 
 logger = logging.getLogger(__name__)
+
+def load_default_syscall_colors():
+    with resources.files("stracetools.data").joinpath("default_syscall_colors.json").open("r") as f:
+        return json.load(f)
 
 class StraceVisualizer:
     """
@@ -44,17 +48,25 @@ class StraceVisualizer:
 
         color_map = {}
 
-        # Load user-provided color mappings if file is provided
         if color_map_file:
-            if not color_map_file.endswith('.json'):
-                logger.error(f"Color map file {color_map_file} must be a JSON file")
-                return {}
+            # Load user-provided color mappings if file is provided
             try:
+                if not color_map_file.endswith('.json'):
+                    logger.error(f"Color map file {color_map_file} must be a JSON file")
+                    raise ValueError("Color map file must be a JSON file")
                 with open(color_map_file, 'r') as f:
                     user_colors = json.load(f)
                     color_map = {syscall: color for syscall, color in user_colors.items() if syscall in syscalls}
             except (FileNotFoundError, json.JSONDecodeError) as e:
                 logger.warning(f"Could not load color map file {color_map_file}: {e}")
+                raise e
+        else:
+            # Load default colors from package data
+            try:
+                user_colors = load_default_syscall_colors()
+                color_map = {syscall: color for syscall, color in user_colors.items() if syscall in syscalls}
+            except Exception as e:
+                logger.warning(f"Could not load default color map: {e}")
 
         # Find syscalls not covered by user mapping
         unmapped_syscalls = [syscall for syscall in syscalls if syscall not in color_map]

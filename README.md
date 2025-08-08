@@ -2,6 +2,8 @@
 
 **A modern Python library for parsing, analyzing, and visualizing strace output with ease.**
 
+[![Python Version](https://img.shields.io/pypi/pyversions/stracetools)](https://pypi.org/project/stracetools/)
+[![PyPI Version](https://img.shields.io/pypi/v/stracetools)](https://pypi.org/project/stracetools/)
 ---
 
 If you find our library useful, please consider starring ⭐ the repository or citing it in your projects! Your support helps us continue improving StraceTools.
@@ -72,13 +74,13 @@ print(analyzer.summary())
 - [x] Rich statistics and insights
 - [x] Interactive timeline Gantt charts
 - [x] Process activity visualization
-- [x] Official publication on PyPI
+- [x] Official publication on PyPI  -- since v0.1.0
 - [x] Lazy, chainable query interface  -- since v0.2.0
+- [x] Enhance processing speed for large strace files  -- since v0.2.1 using batch processing
 
 
 ### Coming Soon 🚧
 - [ ] **Export to CSV/JSON** for further analysis
-- [ ] **Enhance processing speed** for large strace files
 - [ ] **Complete visualization suite** (frequency charts, duration histograms)
 - [ ] **Integration with profiling tools**
 
@@ -196,11 +198,14 @@ A list of available query methods is:
 - `slow_calls(min_duration: float)` - Filter events that took longer than a specified duration (in seconds).
 - `by_filename_regex(pattern: str)` - Filter events by matching the filename against a regex pattern.
 
+#### SyscallGroups default categories
+We provide a set of default syscall groups for easier filtering:
+`FILE_IO`, `FILESYSTEM`, `NETWORK`, `PROCESS`, `MEMORY`, `SYNC`, `SIGNAL`, `IPC`, `IOCTL`, `SECURITY`, `SYSINFO`.
 
-### 📈 **Interactive Visualizations** *(Partial - In Progress)*
+### 📈 **Interactive Visualizations**
 
 ```python
-visualizer = StraceVisualizer(analyzer, color_map_file="default_colors.json", auto_fillup=False)
+visualizer = StraceVisualizer(analyzer, color_map_file="your_color_map.json", auto_fillup=False)
 
 # Interactive Gantt chart timeline
 gantt_fig = visualizer.plot_timeline_gantt(
@@ -214,6 +219,21 @@ gantt_fig.write_html("gantt.html")
 activity_fig = visualizer.plot_process_activity()
 activity_fig.show()
 ```
+
+#### Color Mapping
+You can customize the color mapping for syscalls by providing a JSON file with the following structure:
+```json
+{
+  "_category_file_io": "File I/O operations - Green shades",
+  "read": "#2E8B57",
+  "write": "#228B22"
+}
+```
+If you don't provide a color map file (or set it to `None`), our StraceTools will use our default color mapping.
+
+In case the color map does not contain a specific syscall, depending on the `auto_fillup` parameter, it will either use a random color or a gray color.
+
+### Example Gantt Chart
 
 <img alt="Gantt Chart Example" height="500" src="https://raw.githubusercontent.com/Alex-XJK/stracetools/refs/heads/main/docs/filtered_events.svg"/>
 

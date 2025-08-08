@@ -7,12 +7,17 @@ if __name__ == "__main__":
     analyzer = StraceAnalyzer(events)
     print(analyzer.summary())
 
-    visualizer = StraceVisualizer(analyzer, color_map_file="../stracetools/default_syscall_colors.json", auto_fillup=False)
+    visualizer = StraceVisualizer(analyzer, color_map_file=None, auto_fillup=False)  # You can specify a color map file if needed
 
     # Timeline for all syscalls
     print("Generating timeline for all syscalls...")
+    # Using monolithic method
     fig1 = visualizer.plot_timeline_gantt(max_events=10000)
     fig1.show()
+
+    # Using raw data method
+    fig1_1 = visualizer.plot_timeline_gantt_raw(events)
+    fig1_1.show()
 
     # Timeline for selected syscalls
     print("Generating timeline for selected syscalls...")

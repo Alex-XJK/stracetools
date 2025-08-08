@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "stracetools"
-version = "0.2.0"
+version = "1.0.0"
 description = "A Python library for parsing and analyzing strace output"
 readme = "README.md"
 license = {text = "Apache-2.0"}
@@ -47,6 +47,9 @@ Repository = "https://github.com/Alex-XJK/stracetools"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["stracetools*"]
+
+[tool.setuptools.package-data]
+"stracetools" = ["data/*.json"]
 
 [tool.black]
 line-length = 88
