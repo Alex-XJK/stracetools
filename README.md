@@ -86,7 +86,7 @@ print(analyzer.summary())
 
 - **Python 3.8+**
 - **Core dependencies**: None (pure Python)
-- **Visualization** (optional): `matplotlib>=3.5`, `plotly>=5.0`, `numpy>=1.20`
+- **Visualization**: `plotly>=5.0`, `numpy>=1.20`
 
 ## Contributing 🤝
 

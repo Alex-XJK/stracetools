@@ -1,5 +1,7 @@
 import json
 import logging
+from collections import defaultdict
+
 import plotly.express as px
 import plotly.graph_objects as go
 from datetime import timedelta
@@ -102,6 +104,17 @@ class StraceVisualizer:
         """
         # Filter events for plotting
         events = self._filter_events_for_timeline(pids, syscalls, max_events)
+        return self.plot_timeline_gantt_raw(events)
+
+    def plot_timeline_gantt_raw(self, events: List[TraceEvent]) -> go.Figure:
+        """
+        Create an interactive Gantt chart showing syscall execution timeline from raw events
+        Args:
+            events: List of TraceEvent objects to plot
+        Returns:
+            Plotly Figure object
+        """
+        events = [e for e in events if e.duration is not None]
 
         if not events:
             # Return empty figure with message
@@ -115,45 +128,58 @@ class StraceVisualizer:
             fig.update_layout(title="Syscall Timeline (No Data)")
             return fig
 
-        # Create figure
         fig = go.Figure()
 
-        # Group events by PID for separate tracks
-        filtered_pids = sorted(set(e.pid for e in events))
+        # Group events by PID for Y-axis mapping
+        filtered_pids = sorted({e.pid for e in events})
         pid_to_y = {pid: i for i, pid in enumerate(filtered_pids)}
 
-        # Track which syscalls we've added to legend
+        # Legend control
         syscalls_in_legend = set()
+
+        # Batch container: (pid, syscall) -> list of polygons (each polygon = x[], y[], hover[])
+        batches = defaultdict(lambda: {"x": [], "y": [], "hover": []})
 
         for event in events:
             y_pos = pid_to_y[event.pid]
             start_time = event.timestamp
             end_time = start_time + timedelta(seconds=event.duration)
 
-            # Create detailed hover text
             hover_text = self._create_hover_text(event)
 
-            # Determine color and legend settings
-            color = self.syscall_colors.get(event.name, '#cccccc')
-            show_in_legend = event.name not in syscalls_in_legend
-            if show_in_legend:
-                syscalls_in_legend.add(event.name)
+            # Append polygon path for this (pid, syscall) group
+            batches[(event.pid, event.name)]["x"].extend([
+                start_time, end_time, end_time, start_time, start_time, None  # None breaks polygon
+            ])
+            batches[(event.pid, event.name)]["y"].extend([
+                y_pos - 0.4, y_pos - 0.4, y_pos + 0.4, y_pos + 0.4, y_pos - 0.4, None
+            ])
+            batches[(event.pid, event.name)]["hover"].extend([
+                hover_text, hover_text, hover_text, hover_text, hover_text, None
+            ])
 
-            # Add rectangle for the syscall duration
+        # Create one trace per batch
+        for (pid, syscall), data in batches.items():
+            color = self.syscall_colors.get(syscall, '#cccccc')
+            show_in_legend = syscall not in syscalls_in_legend
+            if show_in_legend:
+                syscalls_in_legend.add(syscall)
+
             fig.add_trace(go.Scatter(
-                x=[start_time, end_time, end_time, start_time, start_time],
-                y=[y_pos - 0.4, y_pos - 0.4, y_pos + 0.4, y_pos + 0.4, y_pos - 0.4],
+                x=data["x"],
+                y=data["y"],
                 fill='toself',
                 fillcolor=color,
                 line=dict(color=color, width=1),
-                hovertemplate=hover_text + '<extra></extra>',
-                name=event.name,
+                hovertemplate="%{customdata}<extra></extra>",
+                customdata=data["hover"],
+                name=syscall,
                 showlegend=show_in_legend,
-                legendgroup=event.name,
+                legendgroup=syscall,
                 mode='lines'
             ))
 
-        # Update layout
+        # Layout
         fig.update_layout(
             title=f"Syscall Timeline - {len(events)} events across {len(filtered_pids)} processes",
             xaxis_title="Time",
