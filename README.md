@@ -9,7 +9,7 @@ If you find our library useful, please consider starring ⭐ the repository or c
 
 ## Why StraceTools? 🚀
 
-System debugging and performance analysis often rely on `strace` to understand application behavior. However, existing tools typically fall short:
+System debugging and performance analysis often rely on [strace](https://strace.io/) to understand application behavior. However, existing tools typically fall short:
 
 - **Limited scope**: Most tools only provide basic statistics or file access lists
 - **No programmability**: Fixed output formats with no API for custom analysis
